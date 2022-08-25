@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Taller</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <!-- Esta es una aplicación para desarrollar una plataforma de videos -->
+    <h1> Video Player</h1>
+    <button class="button" id="play"></button>
+    <button class="button" id="pausa"></button>
+    <button class="button" id="atras"></button>
+    <button class="button" id="adelante"></button>
+    <video id="video"
+    controls
+    muted
+    src="https://res.cloudinary.com/ifeomaimoh/video/upload/v1650567487/speech_ofvfzq.mp4" 
+    >
+    </video>
+    <script>
+        const _video=document.querySelector('#video') 
+        const _play=document.querySelector('#play')
+        const _pausa=document.querySelector('#pausa')
+        _play.addEventListener('click',ManejadorDelPlay)
+        function ManejadorDelPlay() {
+            _video.play()
+            _play.hidden = true
+            _pausa.hidden=false
+
+            console.log('le diste click al botón del play')
+        }
+        _pausa.addEventListener('click',ManejadorDePausa)
+        function ManejadorDePausa(params) {
+            _video.pause()
+            _pausa.hidden=true
+            _play.hidden=false
+            console.log('le diste click al botón del pause')
+            
+        }
+    </script>
+</body>
+</html>
